@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import ConfirmCode from './ConfirmCode';
 import './App.css';
 
 function App() {
+  const [confirmPage, setConfirmPage] = useState(true);
+  if (confirmPage)
+    return (
+      <div className="App">
+        <br />
+        <br />
+        <ConfirmCode />
+      </div>
+    );
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <input type="text" />
+      <input type="text" />
+      <input type="button" value="gir" onClick={() => setConfirmPage(true)} />
+      {/*  <div style={{display:confirmPage ? 'block' :'none'}}>
+        <ConfirmCode/>
+      </div> */}
     </div>
   );
 }
